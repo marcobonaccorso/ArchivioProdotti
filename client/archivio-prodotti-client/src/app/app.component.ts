@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ListaProdottiDto } from './lista-prodotti-dto';
 import { Prodotto } from './prodotto';
 
 @Component({
@@ -17,11 +18,22 @@ export class AppComponent {
     this.aggiorna();
   }
   aggiorna() {
-
+    this.http.get<ListaProdottiDto>("http://localhost:8080/aggiorna-lista")
+      .subscribe(v => this.prodotti = v.listaProdotti);
   }
-  inserisci() { }
-  cancellazione() { }
-  calcolaSconto() { }
-  ricerca() { }
+
+
+inserisci() {
+
+}
+cancellazione() {
+
+}
+calcolaSconto() {
+
+}
+ricerca() {
+
+}
 
 }

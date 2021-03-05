@@ -5,6 +5,8 @@
  */
 package it.sirfin.Archivio.Prodotti.repository;
 
+import it.sirfin.Archivio.Prodotti.model.Prodotto;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author marco
  */
 @Repository
-public interface ArchivioProdottiRepository {
+public interface ProdottoRepository extends JpaRepository<Prodotto, Long>{
+    
     
 }
