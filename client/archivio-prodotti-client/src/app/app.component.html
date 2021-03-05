@@ -1,4 +1,30 @@
 <input type = "text" [(ngModel)]= "prodotto.codice" placeholder="codice">
+<br>
 <input type = "text" [(ngModel)]= "prodotto.descrizione" placeholder="descrizione">
+<br>
 <input type = "text" [(ngModel)]= "prodotto.prezzo" placeholder="prezzo">
-<input type = "text" [(ngModel)]= "prodotto.prezzoIVA" placeholder="prezzoIVA">
+<br>
+<button (click) = "inserisci()">Inserisci</button>
+<button (click) = "aggiorna()">Aggiorna</button>
+<br>
+<table>
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+        <th>PrezzoIva</th>
+        <th>Gestisci</th>
+    </tr>
+    <tr *ngFor="let a of prodotti">
+        <td>{{a.codice}}</td>
+        <td>{{a.descrizione}}</td>
+        <td>{{a.prezzo}}</td>
+        <td>{{a.prezzoiva}}</td>
+        <td>
+        <button (click)="cancellazione(a)">X</button>
+        <button (click)="calcolaSconto(a)">Sconto</button>
+        </td>
+    </tr>
+</table>
+<br>
+Sconto30 &euro; {{Sconto}}
