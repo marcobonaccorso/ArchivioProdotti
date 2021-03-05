@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.sirfin.Archivio.Prodotti.repository;
-
-import org.springframework.stereotype.Repository;
+package it.sirfin.Archivio.Prodotti.dto;
 
 /**
  *
  * @author marco
  */
-@Repository
-public interface ArchivioProdottiRepository {
+public class ListaProdottiDto {
     
 }
