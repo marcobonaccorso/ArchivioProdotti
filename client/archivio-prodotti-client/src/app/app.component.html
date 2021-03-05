@@ -5,6 +5,10 @@
 <input type = "text" [(ngModel)]= "prodotto.prezzo" placeholder="prezzo">
 <br>
 <button (click) = "inserisci()">Inserisci</button>
+<br>
+<input type="text" [(ngModel)]="search" placeholder="ricerca">
+<button (click)="ricerca()">Cerca</button>
+<br>
 <button (click) = "aggiorna()">Aggiorna</button>
 <br>
 <table>
@@ -27,4 +31,4 @@
     </tr>
 </table>
 <br>
-Sconto30 &euro; {{Sconto}}
+Sconto30 &euro; {{sconto}}
