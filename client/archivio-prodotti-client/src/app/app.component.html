@@ -1,17 +1,17 @@
 <input type = "text" [(ngModel)]= "prodotto.codice" placeholder="codice">
-<br>
+<br> <br>
 <input type = "text" [(ngModel)]= "prodotto.descrizione" placeholder="descrizione">
-<br>
+<br> <br>
 <input type = "text" [(ngModel)]= "prodotto.prezzo" placeholder="prezzo">
-<br>
+<br> <br>
 <button (click) = "inserisci()">Inserisci</button>
-<br>
+<br> <br>
 <input type="text" [(ngModel)]="search" placeholder="ricerca">
 <button (click)="ricerca()">Cerca</button>
-<br>
+<br> <br>
 <button (click) = "aggiorna()">Aggiorna</button>
-<br>
-<table>
+<br> <br>
+<table border=3px;>
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>

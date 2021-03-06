@@ -17,23 +17,24 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.aggiorna();
   }
+
   aggiorna() {
     this.http.get<ListaProdottiDto>("http://localhost:8080/aggiorna-lista")
       .subscribe(v => this.prodotti = v.listaProdotti);
   }
 
 
-inserisci() {
+  inserisci() {
 
-}
-cancellazione() {
+  }
+  cancellazione() {
 
-}
-calcolaSconto() {
+  }
+  calcolaSconto() {
 
-}
-ricerca() {
+  }
+  ricerca() {
 
-}
+  }
 
 }
