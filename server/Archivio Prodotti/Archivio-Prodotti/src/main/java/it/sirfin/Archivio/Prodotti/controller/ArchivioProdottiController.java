@@ -8,6 +8,7 @@ package it.sirfin.Archivio.Prodotti.controller;
 import it.sirfin.Archivio.Prodotti.dto.CriterioRicercaDto;
 import it.sirfin.Archivio.Prodotti.dto.ListaProdottiDto;
 import it.sirfin.Archivio.Prodotti.dto.ProdottoDto;
+import it.sirfin.Archivio.Prodotti.dto.ScontoDto;
 import it.sirfin.Archivio.Prodotti.service.ArchivioProdottiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -33,15 +34,22 @@ public class ArchivioProdottiController {
         System.out.println("sono in inserisci cliente" + dto);
         return archivioProdottiService.inserisciProdotto(dto.getProdotto());
     }
-    
+
     @RequestMapping("/ricercaProdotto")
     @ResponseBody
     public ListaProdottiDto ricercaProdotto(@RequestBody CriterioRicercaDto dto) {
         return archivioProdottiService.ricercaProdotto(dto.getStringa());
     }
+
     @RequestMapping("/cancellaProdotto")
     @ResponseBody
     public ListaProdottiDto cancellaProdotto(@RequestBody ProdottoDto dto) {
         return archivioProdottiService.cancellaProdotto(dto.getProdotto());
     }
+    
+    @RequestMapping("/calcolaSconto")
+    @ResponseBody
+    public ListaProdottiDto calcolaSconto(@RequestBody ScontoDto dto) {
+        return archivioProdottiService.calcolaSconto(dto.getProdotto());
+}
 }
