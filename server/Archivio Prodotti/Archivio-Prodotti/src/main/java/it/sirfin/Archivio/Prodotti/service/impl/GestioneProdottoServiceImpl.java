@@ -33,6 +33,7 @@ public class GestioneProdottoServiceImpl implements ArchivioProdottiService {
     @Override
     public ListaProdottiDto inserisciProdotto(Prodotto prod) {
         prodottoRepository.save(prod);
+        double prezzoIva = prod.getPrezzo() * 1.22;
         return aggiorna();
     }
 

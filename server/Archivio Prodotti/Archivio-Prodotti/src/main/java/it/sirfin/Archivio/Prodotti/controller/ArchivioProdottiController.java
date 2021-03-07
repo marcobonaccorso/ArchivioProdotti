@@ -53,4 +53,11 @@ public class ArchivioProdottiController {
     public ScontoDto calcolaSconto(@RequestBody Prodotto prod) {
         return archivioProdottiService.calcolaSconto(prod);
     }
+
+    @RequestMapping("/aggiorna")
+    @ResponseBody
+    ListaProdottiDto aggiorna() {
+        return archivioProdottiService.aggiorna();
+    }
+
 }
