@@ -47,7 +47,6 @@ public class GestioneProdottoServiceImpl implements ArchivioProdottiService {
     public ScontoDto calcolaSconto(Prodotto prod) {
         double sconto = prod.getPrezzo() * 0.7;
         return new ScontoDto(sconto);
-
     }
 
     @Override
