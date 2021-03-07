@@ -8,7 +8,9 @@ package it.sirfin.Archivio.Prodotti.service.impl;
 import it.sirfin.Archivio.Prodotti.dto.ListaProdottiDto;
 import it.sirfin.Archivio.Prodotti.dto.ScontoDto;
 import it.sirfin.Archivio.Prodotti.model.Prodotto;
+import it.sirfin.Archivio.Prodotti.repository.ProdottoRepository;
 import it.sirfin.Archivio.Prodotti.service.ArchivioProdottiService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,32 +22,38 @@ import org.springframework.stereotype.Service;
 public class GestioneProdottoServiceImpl implements ArchivioProdottiService {
 
     @Autowired
-    ArchivioProdottiService archivioProdottiService;
+    ProdottoRepository prodottoRepository;
 
     @Override
     public ListaProdottiDto aggiorna() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Prodotto> lista = prodottoRepository.findAll();
+        return new ListaProdottiDto(lista);
     }
 
     @Override
     public ListaProdottiDto inserisciProdotto(Prodotto prod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        prodottoRepository.save(prod);
+        return aggiorna();
     }
 
     @Override
     public ListaProdottiDto cancellaProdotto(Prodotto prod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        prodottoRepository.delete(prod);
+        return aggiorna();
     }
 
     @Override
     public ScontoDto calcolaSconto(Prodotto prod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double sconto = prod.getPrezzo() * 0.7;
+        return new ScontoDto(sconto);
+
     }
 
     @Override
     public ListaProdottiDto ricercaProdotto(String criterio) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Prodotto> lista = prodottoRepository.findByCodiceContainsOrDescrizioneContains(criterio, criterio
+        );
+        return new ListaProdottiDto(lista);
     }
 
-    
 }
