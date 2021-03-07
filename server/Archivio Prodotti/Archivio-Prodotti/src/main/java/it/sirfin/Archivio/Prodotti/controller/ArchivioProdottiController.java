@@ -5,8 +5,9 @@
  */
 package it.sirfin.Archivio.Prodotti.controller;
 
+import it.sirfin.Archivio.Prodotti.dto.CriterioRicercaDto;
 import it.sirfin.Archivio.Prodotti.dto.ListaProdottiDto;
-import it.sirfin.Archivio.Prodotti.model.Prodotto;
+import it.sirfin.Archivio.Prodotti.dto.ProdottoDto;
 import it.sirfin.Archivio.Prodotti.service.ArchivioProdottiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,9 +27,21 @@ public class ArchivioProdottiController {
     @Autowired
     ArchivioProdottiService archivioProdottiService;
 
-    @RequestMapping("/inserisci-prodotto")
+    @RequestMapping("/inserisciProdotto")
     @ResponseBody
-    public ListaProdottiDto inserisciProdotto(@RequestBody Prodotto prod) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public ListaProdottiDto inserisciProdotto(@RequestBody ProdottoDto dto) {
+        System.out.println("sono in inserisci cliente" + dto);
+        return archivioProdottiService.inserisciProdotto(dto.getProdotto());
+    }
+    
+    @RequestMapping("/ricercaProdotto")
+    @ResponseBody
+    public ListaProdottiDto ricercaProdotto(@RequestBody CriterioRicercaDto dto) {
+        return archivioProdottiService.ricercaProdotto(dto.getStringa());
+    }
+    @RequestMapping("/cancellaProdotto")
+    @ResponseBody
+    public ListaProdottiDto cancellaProdotto(@RequestBody ProdottoDto dto) {
+        return archivioProdottiService.cancellaProdotto(dto.getProdotto());
     }
 }
