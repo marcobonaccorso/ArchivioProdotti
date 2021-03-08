@@ -26,13 +26,18 @@ export class AppComponent {
 
 
   inserisci() {
-    let dto = new ProdottoDto(); 
-    dto.prodotto =  this.prodotto;
+    let dto = new ProdottoDto();
+    dto.prodotto = this.prodotto;
     let l = this.http.post<ListaProdottiDto>(
       "http://localhost:8080/inserisci-prodotto",
       dto
     );
-    l.subscribe(r => this.articoli = r.listaProdotti);
+    l.subscribe(r => {
+      console.log(r);
+      this.articoli = r.listaProdotti;
+    }
+    );
+
 
     this.prodotto = new Prodotto();
   }

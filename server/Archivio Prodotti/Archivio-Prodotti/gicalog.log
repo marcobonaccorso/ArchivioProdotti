@@ -1,4 +1,43 @@
-2021-03-07 20:16:10.479 DEBUG 7932 --- [main] org.hibernate.SQL                        : create table hibernate_sequence (next_val bigint) engine=InnoDB
-2021-03-07 20:16:10.628 DEBUG 7932 --- [main] org.hibernate.SQL                        : insert into hibernate_sequence values ( 1 )
-2021-03-07 20:16:10.643 DEBUG 7932 --- [main] org.hibernate.SQL                        : create table prodotto (id bigint not null, codice varchar(255), descrizione varchar(255), prezzo double precision, prezzo_iva double precision, primary key (id)) engine=InnoDB
-2021-03-07 20:16:12.374  WARN 7932 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 09:15:57.501  WARN 11696 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 09:21:48.120  WARN 19536 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 09:22:12.835 DEBUG 19536 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-08 09:22:12.852 DEBUG 19536 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-08 09:22:12.916 DEBUG 19536 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, prezzo_iva, id) values (?, ?, ?, ?, ?)
+2021-03-08 09:22:12.921 TRACE 19536 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ct02]
+2021-03-08 09:22:12.922 TRACE 19536 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [sapone per piatti]
+2021-03-08 09:22:12.923 TRACE 19536 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [10.0]
+2021-03-08 09:22:12.924 TRACE 19536 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-03-08 09:22:12.926 TRACE 19536 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [1]
+2021-03-08 09:22:13.321 DEBUG 19536 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_
+2021-03-08 09:22:25.666  WARN 19536 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public it.sirfin.Archivio.Prodotti.dto.ListaProdottiDto it.sirfin.Archivio.Prodotti.controller.ArchivioProdottiController.inserisciProdotto(it.sirfin.Archivio.Prodotti.dto.ProdottoDto)]
+2021-03-08 09:24:30.137 DEBUG 19536 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-08 09:24:30.140 DEBUG 19536 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-08 09:24:30.147 DEBUG 19536 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, prezzo_iva, id) values (?, ?, ?, ?, ?)
+2021-03-08 09:24:30.148 TRACE 19536 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ct03]
+2021-03-08 09:24:30.149 TRACE 19536 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [hgfds]
+2021-03-08 09:24:30.150 TRACE 19536 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [15.0]
+2021-03-08 09:24:30.150 TRACE 19536 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-03-08 09:24:30.151 TRACE 19536 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [2]
+2021-03-08 09:24:30.160 DEBUG 19536 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_
+2021-03-08 09:28:31.273  WARN 10788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 09:28:46.884 DEBUG 10788 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-08 09:28:46.895 DEBUG 10788 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-08 09:28:46.939 DEBUG 10788 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, prezzo_iva, id) values (?, ?, ?, ?, ?)
+2021-03-08 09:28:46.943 TRACE 10788 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ct04]
+2021-03-08 09:28:46.944 TRACE 10788 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [iuytre]
+2021-03-08 09:28:46.946 TRACE 10788 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [12.0]
+2021-03-08 09:28:46.947 TRACE 10788 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-03-08 09:28:46.948 TRACE 10788 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [3]
+2021-03-08 09:28:47.228 DEBUG 10788 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_
+2021-03-08 09:35:55.128  WARN 9976 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-08 09:36:14.167 DEBUG 9976 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_
+2021-03-08 09:36:29.432 DEBUG 9976 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_
+2021-03-08 09:40:13.810 DEBUG 9976 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-08 09:40:13.813 DEBUG 9976 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-08 09:40:13.852 DEBUG 9976 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, prezzo_iva, id) values (?, ?, ?, ?, ?)
+2021-03-08 09:40:13.858 TRACE 9976 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ct05]
+2021-03-08 09:40:13.859 TRACE 9976 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [fiori]
+2021-03-08 09:40:13.861 TRACE 9976 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [5.0]
+2021-03-08 09:40:13.862 TRACE 9976 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-03-08 09:40:13.863 TRACE 9976 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [4]
+2021-03-08 09:40:13.878 DEBUG 9976 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzo_iva as prezzo_i5_0_ from prodotto prodotto0_

@@ -29,7 +29,7 @@ public class ArchivioProdottiController {
     @Autowired
     ArchivioProdottiService archivioProdottiService;
 
-    @RequestMapping("/inserisciProdotto")
+    @RequestMapping("/inserisci-prodotto")
     @ResponseBody
     public ListaProdottiDto inserisciProdotto(@RequestBody ProdottoDto dto) {
         System.out.println("sono in inserisci cliente" + dto);
@@ -54,9 +54,9 @@ public class ArchivioProdottiController {
         return archivioProdottiService.calcolaSconto(prod);
     }
 
-    @RequestMapping("/aggiorna")
+    @RequestMapping("/aggiorna-lista")
     @ResponseBody
-    ListaProdottiDto aggiorna() {
+    ListaProdottiDto aggiornaLista() {
         return archivioProdottiService.aggiorna();
     }
 

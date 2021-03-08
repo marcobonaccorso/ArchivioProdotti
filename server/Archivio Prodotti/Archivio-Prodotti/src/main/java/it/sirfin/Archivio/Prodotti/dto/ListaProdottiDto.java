@@ -13,23 +13,23 @@ import java.util.List;
  * @author marco
  */
 public class ListaProdottiDto {
-     private List<Prodotto> listaProdotto;
+     private List<Prodotto> listaProdotti;
 
     public ListaProdottiDto(List<Prodotto> listaProdotto) {
-        this.listaProdotto = listaProdotto;
+        this.listaProdotti = listaProdotto;
     }
 
-    public List<Prodotto> getListaProdotto() {
-        return listaProdotto;
+    public List<Prodotto> getListaProdotti() {
+        return listaProdotti;
     }
 
-    public void setListaProdotto(List<Prodotto> listaProdotto) {
-        this.listaProdotto = listaProdotto;
+    public void setListaProdotti(List<Prodotto> listaProdotti) {
+        this.listaProdotti = listaProdotti;
     }
 
     @Override
     public String toString() {
-        return "ListaProdottiDto{" + "listaProdotto=" + listaProdotto + '}';
+        return "ListaProdottiDto{" + "listaProdotto=" + listaProdotti + '}';
     }
      
      
